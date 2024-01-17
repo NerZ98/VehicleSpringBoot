@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Information</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Car Information</h2>
+
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Brand</th>
+        <th>Door</th>
+        <th>Powertrain</th>
+        <th>Type</th>
+        <th>HP</th>
+        <th>Mileage</th>
+        <th>Price</th>
+    </tr>
+    </thead>
+    <tbody>
+    <!-- Iterate over the list of cars and display each row -->
+    <tr th:each="car : ${cars}">
+        <td th:text="${car.id}"></td>
+        <td th:text="${car.name}"></td>
+        <td th:text="${car.brand}"></td>
+        <td th:text="${car.door}"></td>
+        <td th:text="${car.powertrain}"></td>
+        <td th:text="${car.type}"></td>
+        <td th:text="${car.hp}"></td>
+        <td th:text="${car.mileage}"></td>
+        <td th:text="${car.price}"></td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>

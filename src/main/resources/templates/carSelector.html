@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Selector</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Select Car to Update</h2>
+
+<form th:action="@{'/updateCarForm/' + ${id}}" method="GET">
+    <label for="carId">Choose a Car ID:</label>
+    <select id="carId" name="carId" th:field="${id}">
+        <option th:each="car : ${cars}" th:value="${car.id}" th:text="${car.id}"></option>
+    </select>
+
+    <button type="submit">Update Car</button>
+</form>
+
+</body>
+</html>
